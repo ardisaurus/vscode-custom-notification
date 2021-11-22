@@ -1,0 +1,48 @@
+{
+  "name": "custom-notification",
+  "publisher": "ardisaurus",
+  "displayName": "custom-notification",
+  "repository": "https://github.com/ardisaurus/vscode-custom-notification",
+  "license": "MIT",
+  "description": "Just for fun",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.62.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:custom-notification.popNotification"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "custom-notification.popNotification",
+        "title": "Pop Custom Notification"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^12.20.37",
+    "@types/vscode": "^1.62.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "glob": "^7.2.0",
+    "mocha": "^8.4.0",
+    "typescript": "^4.5.2",
+    "vscode-test": "^1.6.1"
+  }
+}
